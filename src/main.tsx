@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { HomeScreen } from "@/pages/home-screen";
+import LandingPage19 from "@/pages/landing-page-19";
 import { NotFound } from "@/pages/not-found";
 import { RouteProvider } from "@/providers/router-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -9,11 +10,12 @@ import "@/styles/globals.css";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="light">
             <BrowserRouter>
                 <RouteProvider>
                     <Routes>
-                        <Route path="/" element={<HomeScreen />} />
+                        <Route path="/" element={<LandingPage19 />} />
+                        <Route path="/home" element={<HomeScreen />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </RouteProvider>
